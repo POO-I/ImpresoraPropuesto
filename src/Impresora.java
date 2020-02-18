@@ -36,6 +36,8 @@ public class Impresora
   {
     //COMPLETE
     this.paginas_pendientes = 0;
+    this.tinta = tinta;
+    this.hojas = hojas;
   }//Fin constructor con parámetros
   
   /**Metodo de acceso a la propiedad hojas*/
@@ -57,6 +59,9 @@ public class Impresora
   {
     //COMPLETE
     this.tinta += tinta;
+    if(this.tienePaginasPendientesPorImprimir()) {
+        this.imprimir(0);
+    }
   }//fin setTinta
   
   /**Metodo para modificacion de propiedad hojas*/
@@ -64,6 +69,9 @@ public class Impresora
   {
     //COMPLETE
     this.hojas += hojas;
+    if(this.tienePaginasPendientesPorImprimir()) {
+        this.imprimir(0);
+    }
   }//fin setHojas
   
   /**Imprime una página*/
